@@ -6,9 +6,32 @@
 }
 
 .initialText {
+  max-width: 200px;
   font-size: 1rem;
+  font-weight: 350;
+  line-height: 1.5rem;
+  padding: 0.5rem 1rem;
+  max-width: fit-content;
+  background-color: rgb(62 62 67);
+  border-radius: 20px 20px 20px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: rgb(248, 248, 248);
 }
 
 .initialMeme {
-  max-width: 250px;
+  max-width: 280px;
+  border-radius: 10px;
+}
+
+.MessagesContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  align-items: end;
+  justify-items: center;
+  overflow-y: scroll;
 }

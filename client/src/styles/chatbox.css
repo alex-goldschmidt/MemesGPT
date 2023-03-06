@@ -1,0 +1,30 @@
+@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+  .ChatParent {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    min-height: 63vh;
+    max-width: 45vh;
+    margin-right: 0px;
+  }
+}
+
+.ChatParent {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-right: 20px;
+  min-height: 60vh;
+}
+
+.ChatForm {
+  display: inline-grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 10px;
+}
+
+.MuiInputBase-input {
+  color: white;
+}

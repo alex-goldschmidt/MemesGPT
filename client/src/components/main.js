@@ -22,17 +22,24 @@ const Main = () => {
 
   return (
     <div className="Main">
-      <div className="InitialMessagesContainer">
-        {showMessage ? (
-          <p className="initialText">
-            Why haven't you created a meme yet? C'mon man
-          </p>
-        ) : (
-          <p></p>
-        )}
-        {showImage && (
-          <img className="initialMeme" src={PalpatinePicture} alt="Palpatine" />
-        )}
+      <div className="MessagesContainer">
+        <div className="BotResponses">
+          {showMessage ? (
+            <p className="initialText">
+              Why haven't you created a meme yet? C'mon man.
+            </p>
+          ) : (
+            <p></p>
+          )}
+          {showImage && (
+            <img
+              className="initialMeme"
+              src={PalpatinePicture}
+              alt="Palpatine Meme"
+            />
+          )}
+        </div>
+        <div className="UserResponses"></div>
       </div>
     </div>
   );
