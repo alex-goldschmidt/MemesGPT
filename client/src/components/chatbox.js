@@ -3,9 +3,26 @@ import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
+import { useState } from "react";
 import "../styles/chatbox.css";
 
 const ChatBox = () => {
+  const [Memes, setMemes] = useState([]);
+
+  const CreateMeme = () => {
+    const MemeTemplate = document.getElementById("combo-box-demo").value;
+    const TopText = document.getElementById("top-text").value;
+    const BottomText = document.getElementById("bottom-text").value;
+
+    const NewMeme = {
+      template: MemeTemplate,
+      topText: TopText,
+      bottomText: BottomText,
+    };
+
+    setMemes([...Memes, NewMeme]);
+  };
+
   return (
     <div className="ChatParent">
       <div className="ChatForm">
@@ -35,7 +52,7 @@ const ChatBox = () => {
           )}
         />
         <TextField
-          id="outlined-basic"
+          id="top-text"
           label="Top Text"
           variant="outlined"
           InputLabelProps={{
@@ -48,7 +65,7 @@ const ChatBox = () => {
           }}
         />
         <TextField
-          id="outlined-basic"
+          id="bottom-text"
           label="Bottom Text"
           variant="outlined"
           InputLabelProps={{
@@ -60,7 +77,11 @@ const ChatBox = () => {
             },
           }}
         />
-        <Button variant="contained" startIcon={<SendIcon />}>
+        <Button
+          variant="contained"
+          startIcon={<SendIcon />}
+          onClick={CreateMeme}
+        >
           Generate
         </Button>
       </div>
