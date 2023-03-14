@@ -6,7 +6,7 @@ import SendIcon from "@mui/icons-material/Send";
 import { useState } from "react";
 import "../styles/chatbox.css";
 
-const ChatBox = () => {
+const ChatBox = ({ MemeOptions }) => {
   const [Memes, setMemes] = useState([]);
 
   const CreateMeme = () => {
@@ -55,6 +55,7 @@ const ChatBox = () => {
           id="top-text"
           label="Top Text"
           variant="outlined"
+          autoComplete="off"
           InputLabelProps={{
             style: { color: "white" },
           }}
@@ -68,6 +69,7 @@ const ChatBox = () => {
           id="bottom-text"
           label="Bottom Text"
           variant="outlined"
+          autoComplete="off"
           InputLabelProps={{
             style: { color: "white" },
           }}
@@ -84,11 +86,22 @@ const ChatBox = () => {
         >
           Generate
         </Button>
+        <div></div>
       </div>
     </div>
   );
 };
 
-const MemeOptions = [{ label: "There is no meme", Meme: "" }];
+/*
+Method to show contents of ChatForm submission
+{Memes.map((meme, index) => (
+          <div className = "" key={index}>
+            {meme.template} <br />
+            {meme.topText}  <br />
+            {meme.bottomText}
+          </div>
+        ))}
+
+*/
 
 export default ChatBox;
