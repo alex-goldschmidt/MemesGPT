@@ -16,7 +16,6 @@ const App = () => {
     FetchMemesData();
   }, []);
 
-  //use a map function instead?
   const FormatMemeOptions = (data) => {
     const options = [];
     for (let i = 0; i < data.length; i++) {
@@ -25,11 +24,27 @@ const App = () => {
     return options;
   };
 
+  const [Memes, setMemes] = useState([]);
+
+  const CreateMeme = () => {
+    const MemeTemplate = document.getElementById("combo-box-demo").value;
+    const TopText = document.getElementById("top-text").value;
+    const BottomText = document.getElementById("bottom-text").value;
+
+    const NewMeme = {
+      template: MemeTemplate,
+      topText: TopText,
+      bottomText: BottomText,
+    };
+
+    setMemes([...Memes, NewMeme]);
+  };
+
   return (
     <div className="container">
       Meme Talk
-      <Main />
-      <ChatBox MemeOptions={MemeOptions} />
+      <Main Memes={Memes} />
+      <ChatBox MemeOptions={MemeOptions} CreateMeme={CreateMeme} />
     </div>
   );
 };

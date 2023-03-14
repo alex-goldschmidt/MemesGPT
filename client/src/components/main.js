@@ -1,7 +1,7 @@
 import "../styles/main.css";
 import PalpatinePicture from "../images/Palpatine.JPG";
 
-const Main = () => {
+const Main = ({ Memes }) => {
   return (
     <div className="Main">
       <div className="MessagesContainer">
@@ -16,7 +16,15 @@ const Main = () => {
             alt="Palpatine Meme"
           />
         </div>
-        <div className="UserResponses"></div>
+        <div className="UserResponses">
+          {Memes.map((meme, index) => (
+            <p className="Response" key={index}>
+              {meme.template} <br />
+              {meme.topText} <br />
+              {meme.bottomText}
+            </p>
+          ))}
+        </div>
       </div>
     </div>
   );
