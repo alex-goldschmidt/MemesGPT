@@ -6,13 +6,16 @@ import SendIcon from "@mui/icons-material/Send";
 import "../styles/chatbox.css";
 
 const ChatBox = ({ MemeOptions, CreateMeme }) => {
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") CreateMeme();
+  };
   return (
     <div className="ChatParent">
       <div className="ChatForm">
         <Autocomplete
           className="MemeTemplate"
           disablePortal
-          id="combo-box-demo"
+          id="options"
           options={MemeOptions}
           sx={{ width: 300 }}
           renderInput={(params) => (
@@ -56,6 +59,7 @@ const ChatBox = ({ MemeOptions, CreateMeme }) => {
           InputLabelProps={{
             style: { color: "white" },
           }}
+          onKeyDown={handleKeyDown}
           sx={{
             "& .MuiInputBase-input": {
               color: "white",
@@ -69,7 +73,6 @@ const ChatBox = ({ MemeOptions, CreateMeme }) => {
         >
           Generate
         </Button>
-        <div></div>
       </div>
     </div>
   );

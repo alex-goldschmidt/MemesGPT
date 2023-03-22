@@ -6,19 +6,27 @@ const Main = ({ Memes }) => {
     <div className="Main">
       <div className="MessagesContainer">
         <div className="BotResponses">
-          <p className="initialText">
-            Why haven't you created a meme yet? C'mon man.
-          </p>
-
-          <img
-            className="initialMeme"
-            src={PalpatinePicture}
-            alt="Palpatine Meme"
-          />
+          <div className="InitialMessage">
+            <p className="initialText">
+              Why haven't you created a meme yet? C'mon man.
+            </p>
+            <img
+              className="initialMeme"
+              src={PalpatinePicture}
+              alt="Palpatine Meme"
+            />
+          </div>
+          {/*Memes.map((meme, index) => (
+            <img className="BotResponse" key={index} alt={meme.template}>
+              {meme.template} <br />
+              {meme.topText} <br />
+              {meme.bottomText}
+            </img>
+          ))*/}
         </div>
         <div className="UserResponses">
           {Memes.map((meme, index) => (
-            <p className="Response" key={index}>
+            <p className="UserResponse" key={index}>
               {meme.template} <br />
               {meme.topText} <br />
               {meme.bottomText}
