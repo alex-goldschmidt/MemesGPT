@@ -12,7 +12,6 @@ const App = () => {
       const MemesData = await response.json();
       const MemeNameAndURL = GetMemeNameAndURL(MemesData.data.memes);
       SetMemeOptions(MemeNameAndURL);
-      console.log(MemeNameAndURL[0].url);
     }
     FetchMemesData();
   }, []);
@@ -29,11 +28,16 @@ const App = () => {
 
   const CreateMeme = () => {
     const MemeTemplate = document.getElementById("options").value;
+    const selectedOption = MemeOptions.find(
+      (option) => option.label === MemeTemplate
+    );
+    const MemeURL = selectedOption.url;
     const TopText = document.getElementById("top-text").value;
     const BottomText = document.getElementById("bottom-text").value;
 
     const NewMeme = {
       template: MemeTemplate,
+      url: MemeURL,
       topText: TopText,
       bottomText: BottomText,
     };
