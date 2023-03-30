@@ -50,3 +50,29 @@
   justify-items: center;
   overflow-y: scroll;
 }
+
+.memeContainer {
+  position: relative;
+}
+
+.top,
+.bottom {
+  position: absolute;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
+    -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000,
+    2px 2px 5px #000;
+}
+
+.top {
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.bottom {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}

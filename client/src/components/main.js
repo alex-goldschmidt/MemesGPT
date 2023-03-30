@@ -36,7 +36,11 @@ const Main = ({ Memes }) => {
               {meme.bottomText}
             </div>
             <div ref={index === Memes.length - 1 ? lastBotResponseRef : null}>
-              <img className="BotResponse" src={meme.url} alt="Meme" />
+              <div className="memeContainer">
+                <img className="BotResponse" src={meme.url} alt="Meme" />
+                <h2 className="top">{meme.topText}</h2>
+                <h2 className="bottom">{meme.bottomText}</h2>
+              </div>
             </div>
           </React.Fragment>
         ))}
