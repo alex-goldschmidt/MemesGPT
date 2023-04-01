@@ -1,6 +1,7 @@
 import "./App.css";
 import Main from "./components/main";
 import ChatBox from "./components/chatbox";
+import SideBar from "./components/sidebar";
 import { useState, useEffect } from "react";
 
 const App = () => {
@@ -50,6 +51,7 @@ const App = () => {
       Meme Talk
       <Main Memes={Memes} />
       <ChatBox MemeOptions={MemeOptions} CreateMeme={CreateMeme} />
+      <SideBar Memes={Memes} />
     </div>
   );
 };
