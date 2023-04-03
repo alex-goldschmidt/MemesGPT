@@ -32,6 +32,12 @@
   margin-left: 230px;
 }
 
+@media only screen and (max-width: 414px) {
+  .UserResponse {
+    margin-left: 205px;
+  }
+}
+
 .initialMeme,
 .BotResponse {
   max-width: 280px;
