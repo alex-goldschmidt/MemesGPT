@@ -49,6 +49,19 @@
 }
 
 .MuiSvgIcon-root.menu-icon:hover,
-.MuiSvgIcon-root.close:hover {
+.MuiSvgIcon-root.close:hover,
+.MuiSvgIcon-root.closeChat:hover {
   color: red;
+}
+
+.savedChatContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.savedChatContainer:hover {
+  border: 1px solid #eeee;
 }

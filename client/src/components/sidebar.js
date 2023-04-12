@@ -41,7 +41,10 @@ const Sidebar = ({ Memes }) => {
           </div>
           {firstMemeTemplate && (
             <>
-              <p className="SavedChat">{firstMemeTemplate}</p>
+              <div className="savedChatContainer">
+                <p className="SavedChat">{firstMemeTemplate}</p>
+                <CloseIcon className="closeChat" />
+              </div>
             </>
           )}
         </div>
