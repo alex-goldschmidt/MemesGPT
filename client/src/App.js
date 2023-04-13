@@ -3,6 +3,7 @@ import Main from "./components/main";
 import ChatBox from "./components/chatbox";
 import SideBar from "./components/sidebar";
 import { useState, useEffect } from "react";
+import UserMessage from "./server-models/models/UserMessage";
 
 const App = () => {
   const [MemeOptions, SetMemeOptions] = useState([]);
@@ -27,7 +28,7 @@ const App = () => {
 
   const [Memes, setMemes] = useState([]);
 
-  const CreateMeme = () => {
+  const CreateMeme = async () => {
     const MemeTemplate = document.getElementById("options").value;
     const selectedOption = MemeOptions.find(
       (option) => option.label === MemeTemplate
@@ -44,7 +45,32 @@ const App = () => {
     };
 
     setMemes([...Memes, NewMeme]);
+    //saveUserMessage(MemeTemplate, TopText, BottomText);
+    try {
+      const response = await saveUserMessage(MemeTemplate, TopText, BottomText);
+      const result = await response.json();
+      console.log("User message saved successfully.", result);
+    } catch (error) {
+      console.log("Error saving user message:", error);
+    }
   };
+
+  async function saveUserMessage(template, topText, bottomText) {
+    const data = { template, topText, bottomText };
+    try {
+      const response = await fetch("http://localhost:3001/api/messages", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      return response;
+    } catch (error) {
+      console.log("Error saving user message:", error);
+      throw error;
+    }
+  }
 
   return (
     <div className="container">

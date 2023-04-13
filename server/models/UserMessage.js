@@ -11,4 +11,6 @@ const UserMessageSchema = new Schema({
 });
 
 // Export model
-module.exports = mongoose.model("UserMessage", UserMessageSchema);
+const UserMessage = mongoose.model("UserMessage", UserMessageSchema);
+
+module.exports = UserMessage;
