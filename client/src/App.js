@@ -45,7 +45,8 @@ const App = () => {
     };
 
     setMemes([...Memes, NewMeme]);
-    //saveUserMessage(MemeTemplate, TopText, BottomText);
+    /*
+
     try {
       const response = await saveUserMessage(MemeTemplate, TopText, BottomText);
       const result = await response.json();
@@ -53,10 +54,16 @@ const App = () => {
     } catch (error) {
       console.log("Error saving user message:", error);
     }
+    */
   };
 
-  async function saveUserMessage(template, topText, bottomText) {
-    const data = { template, topText, bottomText };
+  /*
+  const saveUserMessage = async (template, topText, bottomText) => {
+    const data = new UserMessage({
+      template,
+      topText,
+      bottomText,
+    });
     try {
       const response = await fetch("http://localhost:3001/api/messages", {
         method: "POST",
@@ -70,7 +77,8 @@ const App = () => {
       console.log("Error saving user message:", error);
       throw error;
     }
-  }
+  };
+  */
 
   return (
     <div className="container">
