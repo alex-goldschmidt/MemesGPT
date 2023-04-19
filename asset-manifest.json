@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ac5250c4.css",
+    "main.js": "/static/js/main.0af99c4b.js",
+    "static/media/Palpatine.JPG": "/static/media/Palpatine.a3a6b567eda221049487.JPG",
+    "index.html": "/index.html",
+    "main.ac5250c4.css.map": "/static/css/main.ac5250c4.css.map",
+    "main.0af99c4b.js.map": "/static/js/main.0af99c4b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ac5250c4.css",
+    "static/js/main.0af99c4b.js"
+  ]
+}
